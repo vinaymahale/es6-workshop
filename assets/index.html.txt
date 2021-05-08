@@ -1,0 +1,28 @@
+<script id="drone-template" type="x-tmpl-mustache">
+{{#drones}}
+<div class="col-sm-4" data-id="{{ license }}">
+  <figure class="figure">
+    <img src="images/drone01.jpg" class="figure-img img-fluid rounded" alt="{{ license }}">
+    <figcaption class="figure-caption">
+      Licence: {{ license }}<br>
+      Model: {{ model }}
+    </figcaption>
+  </figure>
+</div>
+{{/drones}}
+</script>
+
+<script id="car-template" type="x-tmpl-mustache">
+{{#cars}}
+<div class="col-sm-4" data-id="{{ license }}">
+  <figure class="figure">
+    <img src="images/car01.jpg" class="figure-img img-fluid rounded" alt="{{ license }}">
+    <figcaption class="figure-caption">
+      Licence: {{ license }}<br>
+      Model: {{ model }}<br>
+      Make: {{ make }}
+    </figcaption>
+  </figure>
+</div>
+{{/cars}}
+</script>

@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <title>Fleet Management</title>
+  <meta name="description" content="ES6 Workshop">
+  <meta name="author" content="SJI">
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
+  
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+  <script src="node_modules/mustache/mustache.min.js"></script>
+  <script type="module" src="src/main.js"></script>
+</head>
+
+<body>
+  <header>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  <div class="container">
+			  <a class="navbar-brand" href="#">SJI</a>
+			  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			    <span class="navbar-toggler-icon"></span>
+			  </button>
+			
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+			    <ul class="navbar-nav mr-auto">
+			      <li class="nav-item">
+			        <a class="nav-link" href="">Home</a>
+			      </li>
+			      <li class="nav-item">
+			        <a class="nav-link" href="#drones">Drones</a>
+			      </li>
+			      <li class="nav-item">
+	            <a class="nav-link" href="#cars">Cars</a>
+	          </li>
+			    </ul>
+			  </div>
+		  </div>
+		</nav>
+  </header>
+  
+  <main role="main">
+    <div class="container">
+      <article>
+        <p>Lorem ipsum dolor sit amet, discere mentitum inimicus et per, ei vim eirmod feugiat, 
+        at detracto sapientem dissentiet cum. Ei qui prima veritus ponderum. 
+        Sed consul iudicabit maluisset ad, nam iusto feugiat dolorum id. 
+        Diam labitur ut est, paulo cetero comprehensam mea ad. Pri wisi novum cu, eum iriure laoreet ad.</p>
+        
+        <p>Sea in dolores argumentum. Ius ferri philosophia cu, has velit democritum ut. 
+        Id saperet mnesarchum pri, recteque laboramus sit ad. 
+        Quod nihil semper cu est. Quodsi diceret qui eu. Quo wisi ridens corpora ut, eros facete nam ea.</p>
+      </article>
+      
+	    <div id="drones">
+				<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+				  <span>Drones</span>
+				  <form class="search-form form-inline" data-search="drones">
+				    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+				  </form>
+				</nav>
+				
+	      <div class="row" id="drone-list">
+	      
+	      </div>
+	    </div>
+	    
+	    <div id="cars">
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+          <span>Cars</span>
+          <form class="search-form form-inline" data-search="cars">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
+        </nav>
+	    
+	      <div class="row" id="car-list">
+	       
+	      </div>
+	    </div>
+    </div>
+  </main>
+  
+  <footer>
+  
+  </footer>
+
+  <script id="drone-template" type="x-tmpl-mustache">
+		{{#drones}}
+		<div class="col-sm-4" data-id="{{ license }}">
+		<figure class="figure">
+			<img src="images/drone01.jpg" class="figure-img img-fluid rounded" alt="{{ license }}">
+			<figcaption class="figure-caption">
+			Licence: {{ license }}<br>
+			Model: {{ model }}
+			</figcaption>
+		</figure>
+		</div>
+		{{/drones}}
+   </script>
+
+   <script id="car-template" type="x-tmpl-mustache">
+		{{#cars}}
+		<div class="col-sm-4" data-id="{{ license }}">
+		<figure class="figure">
+			<img src="images/car01.jpg" class="figure-img img-fluid rounded" alt="{{ license }}">
+			<figcaption class="figure-caption">
+			Licence: {{ license }}<br>
+			Model: {{ model }}<br>
+			Make: {{ make }}
+			</figcaption>
+		</figure>
+		</div>
+		{{/cars}}
+	</script>
+  
+</body>
+</html>
